@@ -20,6 +20,9 @@ jobs:
           distribution: 'adopt'
           java-version: '17'
 
+      - name: set gralde executable
+        run: chmod +x gradlew
+
       - name: Setup and execute Gradle 'test' task
         uses: gradle/gradle-build-action@v2
         with:
