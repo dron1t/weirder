@@ -26,8 +26,8 @@ class WeirderControllerTest {
     @Test
     internal fun testWeirder() {
         val request: HttpRequest<RequestBody> = POST("/weirder", RequestBody("abc"))
-        val body: HttpResponse<ResponseBody> = client!!.toBlocking().exchange(request, ResponseBody::class.java)
+        val body: HttpResponse<ResponseBody> = client.toBlocking().exchange(request, ResponseBody::class.java)
         assertNotNull(body.body())
-        assertEquals("abc", body.body().message)
+        assertEquals("abc", body.body()?.message)
     }
 }
