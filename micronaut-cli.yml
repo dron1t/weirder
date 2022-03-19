@@ -1,0 +1,6 @@
+applicationType: default
+defaultPackage: pl.dron1t
+testFramework: junit
+sourceLanguage: kotlin
+buildTool: gradle_kotlin
+features: [ annotation-api, app-name, gradle, hibernate-validator, http-client, jackson-databind, jax-rs, junit, kotlin, kotlin-application, kotlin-build, kotlin-extension-functions, micronaut-build, openapi, problem-json, readme, serialization-jackson, shade, slf4j-simple, swagger-ui, undertow-server, yaml ]

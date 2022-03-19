@@ -1,0 +1,26 @@
+name: Build & Test -> Publish
+on:
+  workflow_dispatch:
+
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    name: "Build app & test"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@master
+
+      - name: Setup Java
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'adopt'
+          java-version: '17'
+
+      - name: Setup and execute Gradle 'test' task
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: test
